@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <!-- <localRepository>.m2/repository</localRepository> -->
+    <pluginGroups>
+        <pluginGroup>org.mule.tools</pluginGroup>
+    </pluginGroups>
+    <proxies></proxies>
+<servers>
+  <server>
+    <id>anypoint-exchange-v3</id>
+    <username>${u}</username>
+    <password>${p}</password>
+  </server>
+</servers>
+    <profiles>
+        <profile>
+            <id>anypoint-exchange-v3</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>anypoint-exchange-v3</id>
+                    <name>Anypoint Exchange</name>
+                    <url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+                    <layout>default</layout>
+				</repository>
+            </repositories>
+        </profile>
+    </profiles>
+</settings>

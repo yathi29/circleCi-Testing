@@ -1,0 +1,16 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/openjdk:8-jdk
+        working_directory: ~/repo
+        environment:
+            MAVEN_OPTS: -Xmx3200m
+        steps:
+            - checkout
+            - run: maven clean
+            - run: maven test -s settings.xml
+            - run: maven package -s settings.xml
+            - run: maven install -s settings.xml
+            - run: maven deploy -DmuleDeploy -s settings.xml
+		
