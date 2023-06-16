@@ -18,5 +18,6 @@ output application/json
 "Checking CICD for Circle CI"]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="4c07d9df-6ae0-4640-a74e-7dc188913cc2" message="#[payload]"/>
 	</flow>
 </mule>
